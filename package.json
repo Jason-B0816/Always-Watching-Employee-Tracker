@@ -1,0 +1,50 @@
+{
+  "name": "always-watching-employee-tracker",
+  "version": "1.0.0",
+  "description": "Allows business owner to view and manage the departments, roles, and employees in the company",
+  "main": "index.js",
+  
+      "scripts": {
+        "start": "node dist/index.js",   
+        "build": "tsc",                    
+        "dev": "cross-env NODE_ENV=development ts-node src/index.ts", 
+        "test": "echo \"No tests specified\" && exit 0", 
+        "migrate": "node src/db/migrate.js", 
+        "seed": "node src/db/seed.js", 
+        "lint": "eslint . --ext .ts",  
+        "watch": "tsc --watch",         
+        "start:prod": "NODE_ENV=production node dist/index.js" 
+      },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "cli-table3": "^0.6.0",
+    "color": "^4.1.3",
+    "inquirer": "8.2.4",
+    "pg":"^8.11.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.1",
+    "@types/node": "^20.12.7",
+    "@types/pg":"^8.11.6",
+    "cross-env": "^7.0.3",
+    "dotenv-cli":"^4.0.0",
+    "typescript": "^5.7.3"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jason-B0816/Always-Watching-Employee-Tracker.git"
+  },
+  "keywords": [
+    "Always",
+    "Watching",
+    "Employee",
+    "Tracker"
+  ],
+  "author": "Jason  Brooks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jason-B0816/Always-Watching-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/Jason-B0816/Always-Watching-Employee-Tracker#readme"
+}
