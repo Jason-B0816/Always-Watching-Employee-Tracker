@@ -55,6 +55,11 @@ function mainMenu() {
             },
             {
                 type: "input",
+                name: "salary",
+                message: "What is the employee's salary?",
+            },
+            {
+                type: "input",
                 name: "roleId",
                 message: "What is the employee's role ID?",
             },
@@ -65,7 +70,7 @@ function mainMenu() {
             }
         ])
         .then(answers => {
-            pool.query("INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ($1, $2, $3, $4)", [answers.firstName, answers.lastName, answers.roleId, answers.managerId])
+            pool.query("INSERT INTO employees (first_name, last_name, salary, role_id, manager_id) VALUES ($1, $2, $3, $4, $5)", [answers.firstName, answers.lastName, answers.roleId, answers.salary, answers.managerId])
             .then(() => {
                 console.log("Employee added successfully");
                 mainMenu();
@@ -108,7 +113,7 @@ function mainMenu() {
             }
         ])
         .then(answers => {
-            pool.query("INSERT INTO roles (title, salary, department_id) VALUES ($1, $2, $3)", [answers.title, answers.salary, answers.departmentId])
+            pool.query("INSERT INTO roles (title, salary,department_id) VALUES ($1, $2, $3)", [answers.title, answers.salary, answers.departmentId])
             .then(() => {
                 console.log("Role added successfully");
                 mainMenu();
@@ -128,9 +133,10 @@ function mainMenu() {
             }
         ])
         .then(answers => {
-            pool.query("UPDATE employee SET role_id = $1 WHERE id = $2", [answers.roleId, answers.employeeId])
+            pool.query("UPDATE employees SET role_id = $1 WHERE id = $2", [answers.roleId, answers.employeeId])
             .then(() => {
                 console.log("Employee role updated successfully");
+                
                 mainMenu();
             })
         })
