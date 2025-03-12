@@ -23,6 +23,7 @@ CREATE TABLE employees (
     last_name VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
     role_id INT REFERENCES roles(id) ON DELETE SET NULL,  -- Set role to NULL if the role is deleted
-    manager_id INT REFERENCES employees(id) ON DELETE SET NULL  -- Set manager to NULL if the manager is deleted
+    manager_id INT REFERENCES employees(id) ON DELETE SET NULL, -- Set manager to NULL if the manager is deleted
+    employee_id INT REFERENCES employees(id) ON DELETE SET NULL  -- Set employee to NULL if the employee is deleted
 );
 
