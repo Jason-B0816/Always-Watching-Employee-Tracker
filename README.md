@@ -49,6 +49,7 @@ This command application for business owners to effectively and efficiently mana
 ## Contact
 - Email: jbrooks200800@gmail.com
 - Issues: Please email or use GitHub repository page
+- GitHub Username: Jason-B0816
 - GitHub User Page: https://github.com/Jason-B0816
 
 ## Links
